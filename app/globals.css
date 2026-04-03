@@ -1,0 +1,154 @@
+/* ─── Brand Tokens ─── */
+:root {
+  --black: #0D0D0D;
+  --charcoal: #1A1A1A;
+  --iron: #2C2C2C;
+  --steel: #3E3E3E;
+  --ash: #6B6B6B;
+  --smoke: #9A9A9A;
+  --copper: #B87333;
+  --ember: #D4925A;
+  --forge: #8B5520;
+  --cream: #F2EDE8;
+  --white: #FAFAF8;
+}
+
+/* ─── Reset ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--cream);
+  font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ─── Buttons ─── */
+.btn-primary {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--copper);
+  color: var(--black);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transition: background 0.2s;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body), sans-serif;
+  text-align: center;
+}
+.btn-primary:hover {
+  background: var(--ember);
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 13px 32px;
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid var(--steel);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s;
+  cursor: pointer;
+  font-family: var(--font-body), sans-serif;
+  text-align: center;
+}
+.btn-secondary:hover {
+  border-color: var(--copper);
+  color: var(--copper);
+}
+
+/* ─── Section Label ─── */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-body), sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 20px;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--copper);
+  flex-shrink: 0;
+}
+
+/* ─── Section Animations ─── */
+.section-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* ─── Section Header ─── */
+.section-header {
+  margin-bottom: 64px;
+}
+.section-title {
+  font-family: var(--font-display), serif;
+  font-size: 42px;
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-family: var(--font-editorial), serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--smoke);
+  max-width: 520px;
+  line-height: 1.65;
+}
+
+/* ─── Container ─── */
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+  .section-title {
+    font-size: 32px;
+  }
+}
